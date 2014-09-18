@@ -1,0 +1,35 @@
+VIEWPORT:
+----------
+center() 	= 0.0 + 0.0i
+size() 		= 4.0 + 4.0i
+
+a()			= 1.7425
+p(x)		= x^3 - 1
+pd(x)		= 3*x^2
+
+fractal(z,c,zprev) 	= z - a()*p(z)/pd(z)
+ending(z) 			= isGreater(0.00001,abs(p(z)))
+
+Coloring:
+----------
+iter_coloring(iter,maxiter,z,c) = iter/maxiter
+fractional_iter_coloring(iter,maxiter,z,c) = (iter + 1 - log(2, log(10, abs(z)))) / maxiter
+
+outcoloring(i,m,z,c) = iter_coloring(i,m,z,c)
+!use_outcoloring_palette
+
+zero() = nan()
+
+incoloring_r(iter,maxiter,z,c) = 0
+incoloring_g(iter,maxiter,z,c) = 0
+incoloring_b(iter,maxiter,z,c) = 0
+
+
+Palette:
+--------------
+- color mapping functions
+
+r(n) = n^1.44
+g(n) = r(n)
+b(n) = g(n)
+

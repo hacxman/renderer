@@ -1,0 +1,80 @@
+Keywords:
+--------------
+
+!julia
+- or !newton
+
+
+Functions:
+--------------
+
+const_fn() = 20
+const_bfn() = -const_fn()
+
+- functions may refer to other functions defined below/above
+
+another(x) = -sin(x)
+- or to standard functions [ sin, cos, tan ]
+
+
+VIEWPORT:
+----------
+center() = -0.55575 + 0.64561i
+size() = 0.00002 + 0.00002i
+-1/(30541.0 + 30541.0i)
+
+
+-kokot fractal(s,x,y) = 17.1+i/(3+4)+4-i*const_fn()+another(x)+s^sin(x+sin(y)+1)
+
+p(x) = -0.4*x^4 + x^3 - 1
+pd(x) = 3*x^2 -1.6*x^3
+
+fractal(z,c,zprev) = z^2 + c
+- + 0.4 + 0.6i
+
+ending(z) = isGreater(abs(z),2)
+- ending(z) isGreater(0.0001, abs(p(z)))
+
+!mandelbrot
+
+- required fractal function
+
+Coloring:
+----------
+iter_coloring(iter,maxiter,z,c) = iter/maxiter
+fractional_iter_coloring(iter,maxiter,z,c) = (iter + 1 - log(2, log(10, abs(z)))) / maxiter
+
+oc(iter,maxiter,z,c) = fractional_iter_coloring(iter,maxiter,z,c)*2.5
+outcoloring_r(iter,maxiter,z,c) = oc(iter,maxiter,z,c)
+outcoloring_g(iter,maxiter,z,c) = oc(iter,maxiter,z,c)
+outcoloring_b(iter,maxiter,z,c) = oc(iter,maxiter,z,c)
+
+outcoloring(i,m,z,c) = oc(i,m,z,c)
+!use_outcoloring_palette
+
+zero() = nan()
+
+ic(i,m_i,z,c) = mag(z)*cos(Re(z)^2)
+incoloring_r(iter,maxiter,z,c) = (abs((log(100,abs(Re(z))))*(log(100,abs(Im(z))))))
+incoloring_g(iter,maxiter,z,c) = abs((log(100,abs(Re(z)))^2))
+incoloring_b(iter,maxiter,z,c) = abs((log(100,abs(Im(z)))^2))
+
+
+Palette:
+--------------
+- color mapping functions
+
+r(n) = n^(1/3.5)
+-sin(3.14*(1-n))
+g(n) = (1-n)^(0.5)*sin(n)
+-cos(31.4*n)
+b(n) = 1-n
+-sin((1-n)^(0-0.5))
+
+
+
+XXX:
+--------------
+badone() = 
+= fial
+
