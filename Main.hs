@@ -2,7 +2,7 @@ module Main where
 
 import TGA
 import System.IO
-import Complex
+import Data.Complex
 import System.Environment
 import System.Exit
 import Control.Parallel

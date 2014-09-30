@@ -5,8 +5,8 @@ import Text.ParserCombinators.Parsec
 import Text.ParserCombinators.Parsec.Expr
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language 
-import Maybe
-import Complex
+import Data.Maybe
+import Data.Complex
 
 import ParseTypes
 

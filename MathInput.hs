@@ -1,6 +1,6 @@
 module MathInput where
-import Maybe
-import Complex
+import Data.Maybe
+import Data.Complex
 import Control.Parallel
 import qualified Parse as P
 import System.IO

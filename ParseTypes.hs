@@ -1,5 +1,5 @@
 module ParseTypes where
-import Complex
+import Data.Complex
 import Text.ParserCombinators.Parsec
 
 data Fnc    = NameF (Either ParseError (String, [String])) (Either ParseError [Exp])
